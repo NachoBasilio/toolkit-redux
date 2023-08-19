@@ -14,14 +14,13 @@ const pokemonSlices = createSlice({
         state.isLoading = true
     },
     setPokemon: (state, action) => {
-        console.log(action)
+        state.isLoading = false
+        state.page = action.payload.page
+        state.pokemon = action.payload.pokemon
     }
   }
 });
 
-export const {
-    starLoadingPokemon,
-    setPokemon
-} = pokemonSlices.actions
+export const {starLoadingPokemon,setPokemon} = pokemonSlices.actions
 
 export default pokemonSlices.reducer
